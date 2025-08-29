@@ -1,86 +1,99 @@
-/* ...existing code... */
-
-/* Make sure html and body take full width */
-html, body {
-  width: 100%;
-  min-width: 0;
-  overflow-x: hidden;
-}
-
-/* App container tweaks for mobile */
-.app-container {
+* {
   box-sizing: border-box;
-  width: 100%;
-  min-width: 0;
+  margin: 0;
+  padding: 0;
 }
 
-/* Ensure search bar and buttons don't overflow */
-.search-container input[type="text"] {
-  min-width: 0;
-  width: 1%;
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 800px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.search-container input {
+  width: 60%;
+  padding: 12px 15px;
+  border-radius: 8px 0 0 8px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
 }
 
 .search-container button {
-  white-space: nowrap;
+  padding: 12px 20px;
+  border-radius: 0 8px 8px 0;
+  border: none;
+  background: #1e90ff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.3s;
 }
 
-/* Forecast cards: allow wrapping and shrinking */
-.forecast-cards {
-  flex-wrap: wrap;
-  justify-content: flex-start;
+.search-container button:hover {
+  background: #0c71c3;
 }
 
-.forecast-card {
-  flex: 1 1 120px;
-  min-width: 120px;
-  max-width: 48%;
+.weather-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.weather-info h2 {
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 
-@media (max-width: 600px) {
-  .app-container {
-    max-width: 100vw;
-    padding: 6vw 2vw;
-    border-radius: 0;
-    box-shadow: none;
-  }
-  h1 {
-    font-size: 1.1em;
-    text-align: center;
-  }
-  .weather-details {
-    flex-direction: column;
-    gap: 8px;
-  }
-  .forecast-cards {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  .forecast-card {
-    min-width: 120px;
-    max-width: 100%;
-    width: 100%;
-    margin-bottom: 8px;
-  }
-  .chart-container {
-    width: 100vw;
-    overflow-x: auto;
-  }
+.weather-info p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  text-transform: capitalize;
 }
 
-/* For very small screens */
-@media (max-width: 400px) {
-  .app-container {
-    padding: 2vw 1vw;
-  }
-  .forecast-card {
-    min-width: 90px;
-    font-size: 0.95em;
-  }
-  .search-container input[type="text"] {
-    font-size: 0.95em;
-  }
+.weather-details {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1rem;
 }
 
-/* ...existing code... */
+.weather-details div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.chart-container {
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+}
+
